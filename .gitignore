@@ -2,3 +2,8 @@
 .settings
 .classpath
 /*/target
+/**/target
+/**/*.lck
+/**/*.log
+/**/*.script
+*.*.*~
