@@ -233,7 +233,7 @@ public class AddressBookMainView extends HorizontalSplitPanel implements
                         departmentFilter));
             }
         }
-        if (textFilter != null && !textFilter.equals("")) {
+        if (textFilter != null && !"".equals(textFilter)) {
             Or or = new Or(new Like("firstName", textFilter + "%", false),
                     new Like("lastName", textFilter + "%", false));
             persons.addContainerFilter(or);
