@@ -16,6 +16,7 @@
 
 package com.vaadin.addon.jpacontainer.provider.emtests;
 
+import java.security.SecureRandom;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
@@ -648,7 +649,7 @@ public abstract class AbstractEntityProviderEMTest {
     @Test
     public void testJoin() throws Exception {
         // Save some testing data
-        Random rnd = new Random();
+        Random rnd = new SecureRandom();
         Map<Skill, Collection<Object>> skillPersonMap = new HashMap<Skill, Collection<Object>>();
         getEntityManager().getTransaction().begin();
         for (Skill s : DataGenerator.getSkills()) {
@@ -709,7 +710,7 @@ public abstract class AbstractEntityProviderEMTest {
     @Test
     public void testJoinFilter() throws Exception {
         // Save some testing data
-        Random rnd = new Random();
+        Random rnd = new SecureRandom();
         Map<Skill, Collection<Object>> skillPersonMap = new HashMap<Skill, Collection<Object>>();
         getEntityManager().getTransaction().begin();
         for (Skill s : DataGenerator.getSkills()) {
