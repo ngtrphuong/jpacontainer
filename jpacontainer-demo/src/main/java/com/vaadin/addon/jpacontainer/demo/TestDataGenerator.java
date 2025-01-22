@@ -33,6 +33,7 @@ import com.vaadin.addon.jpacontainer.demo.domain.Invoice;
 import com.vaadin.addon.jpacontainer.demo.domain.InvoiceItem;
 import com.vaadin.addon.jpacontainer.demo.domain.Order;
 import com.vaadin.addon.jpacontainer.demo.domain.OrderItem;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -191,7 +192,7 @@ public class TestDataGenerator implements
             logger.debug("Generating customers");
         }
 
-        Random rnd = new Random();
+        Random rnd = new SecureRandom();
         customerIds = new ArrayList(2000);
         for (int i = 0; i < 2000; i++) {
             Customer customer = new Customer();
@@ -227,7 +228,7 @@ public class TestDataGenerator implements
             logger.debug("Generating orders");
         }
 
-        Random rnd = new Random();
+        Random rnd = new SecureRandom();
         orderIds = new ArrayList(3000);
         for (int i = 0; i < 3000; i++) {
             Order order = new Order();
@@ -280,7 +281,7 @@ public class TestDataGenerator implements
             logger.debug("Generating invoices");
         }
         Set<Order> orders = new HashSet<Order>();
-        Random rnd = new Random();
+        Random rnd = new SecureRandom();
         for (int i = 0; i < 2500; i++) {
             Invoice invoice = new Invoice();
             Order order;
@@ -310,7 +311,7 @@ public class TestDataGenerator implements
         orders = null;
     }
 
-    private static Random dateRnd = new Random();
+    private static Random dateRnd = new SecureRandom();
 
     private static Date createRandomDate() {
         Calendar cal = Calendar.getInstance();
