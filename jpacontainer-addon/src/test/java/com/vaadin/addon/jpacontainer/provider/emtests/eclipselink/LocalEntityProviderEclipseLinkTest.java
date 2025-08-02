@@ -16,6 +16,7 @@
 
 package com.vaadin.addon.jpacontainer.provider.emtests.eclipselink;
 
+import java.security.SecureRandom;
 import static org.eclipse.persistence.config.PersistenceUnitProperties.CREATE_ONLY;
 import static org.eclipse.persistence.config.PersistenceUnitProperties.DDL_GENERATION;
 import static org.eclipse.persistence.config.PersistenceUnitProperties.JDBC_DRIVER;
@@ -97,7 +98,7 @@ public class LocalEntityProviderEclipseLinkTest extends
     @Test
     public void testImplicitJoin() throws Exception {
         // Save some testing data
-        Random rnd = new Random();
+        Random rnd = new SecureRandom();
         Map<Skill, Collection<Object>> skillPersonMap = new HashMap<Skill, Collection<Object>>();
         getEntityManager().getTransaction().begin();
         for (Skill s : DataGenerator.getSkills()) {
